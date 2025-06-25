@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SkillIcons from '../components/SkillIcons.astro';
+---
+
+<Layout title="xamyl - Portfolio">
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>hello! i'm <span class="highlight">xamyl</span></h1>
+        <p class="subtitle">silly trans dev</p>
+        <p class="description">
+			trans rights!
+		</p>
+        <a href="https://github.com/xamyl" class="shonk" target="_blank" rel="noopener noreferrer">
+		github
+	</a>
+	        <a href="https://xam.has.fish" class="shonk" target="_blank" rel="noopener noreferrer">
+		bluesky
+	</a>
+	        <a href="https://tech.lgbt/@xam" class="shonk" target="_blank" rel="noopener noreferrer">
+		mastodon
+	</a>
+		<a href="#" class="shonk" target="_blank" rel="noopener noreferrer">
+		blog
+		</a>
+		<a href="https://www.npmjs.com/~xamyl1" class="shonk" target="_blank" rel="noopener noreferrer">
+			npm
+		</a>
+		<a href="#why" class="shonk" target="_blank" rel="noopener noreferrer">
+			website
+		</a>
+      </div>
+    </section>
+
+    <section class="skills">
+      <div class="container">
+        <h2>skills</h2>
+        <SkillIcons />
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <h2>about</h2>
+        <p>
+			full-time silly goober<br>
+			i program (i think). Oh yeah, and I accidentally slowed down the entire internet in massachusetts by 1 second. :3<br>
+			also sorry if this site seems too much like a random portfolio
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .highlight {
+    color: #00ff95;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .shonk {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  .shonk:hover {
+    background: #07010117;
+    transform: translateY(-2px);
+  }
+
+  .skills, .about {
+    padding: 80px 0;
+    background: #23243a;
+  }
+
+  .skills h2, .about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
+    text-shadow: 0 2px 8px #0006;
+  }
+
+  .about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #bdbdbd;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .container {
+      padding: 0 15px;
+    }
+  }
+</style>

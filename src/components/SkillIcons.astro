@@ -1,0 +1,88 @@
+---
+const skillProjects = [
+  { icon: 'js', url: 'https://en.wikipedia.org/wiki/JavaScript' },
+  { icon: 'ts', url: 'https://typescriptlang.org' },
+  { icon: 'py', url: 'https://python.org' },
+  { icon: 'react', url: 'https://react.dev' },
+  { icon: 'nodejs', url: 'https://nodejs.org' },
+  { icon: 'html', url: 'https://html.spec.whatwg.org/' },
+  { icon: 'css', url: 'https://www.w3.org/TR/css/#css' },
+  { icon: 'astro', url: 'https://astro.build' },
+  { icon: 'svelte', url: 'https://svelte.dev' },
+  { icon: 'nextjs', url: 'https://nextjs.org' },
+  { icon: 'tailwind', url: 'https://tailwindcss.com' },
+  { icon: 'vite', url: 'https://vite.dev' },
+  { icon: 'supabase', url: 'https://supabase.com' },
+  { icon: 'linux', url: 'https://www.kernel.org/' },
+  { icon: 'md', url: 'https://daringfireball.net/projects/markdown/'},
+  { icon: 'webpack', url: 'https://webpack.js.org/' },
+  { icon: 'go', url: 'https://go.dev' },
+  { icon: 'discordjs', url: 'https://discord.js.org' },
+  { icon: 'vue', url: 'https://vuejs.org' }
+];
+
+const iconNames = skillProjects.map(skill => skill.icon).join(',');
+const skillIconsUrl = `https://skillicons.dev/icons?i=${iconNames}`;
+---
+
+<div class="skills-grid">
+  {skillProjects.map((skill, index) => (
+    <a 
+      href={skill.url} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="skill-icon-link"
+      data-skill={skill.icon}
+    >
+      <img 
+        src={`https://skillicons.dev/icons?i=${skill.icon}`}
+        alt={skill.icon}
+        class="skill-icon"
+      />
+    </a>
+  ))}
+</div>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .skill-icon-link {
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .skill-icon {
+    width: 64px;
+    height: 64px;
+    display: block;
+    transition: brightness 0.3s ease;
+  }
+
+  .skill-icon-link:hover {
+    transform: translateY(-4px);
+  }
+
+  .skill-icon-link:hover .skill-icon {
+    filter: brightness(1.2);
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+      gap: 15px;
+    }
+    
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+    }
+  }
